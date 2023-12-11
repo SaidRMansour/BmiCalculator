@@ -9,8 +9,19 @@ public class CalculatorController : ControllerBase
 {
 
     [HttpGet]
-    public IActionResult Get([FromQuery] double height, double weight)
+    public async Task<IActionResult> Get([FromQuery] string height, string weight)
     {
+        // Validate height input
+        if (!double.TryParse(height, out double parsedHeight) || parsedHeight <= 0)
+        {
+            return BadRequest("Ugyldig højde.");
+        }
+        // Validate weight input
+        if (!double.TryParse(weight, out double parsedWeight) || parsedWeight <= 0)
+        {
+            return BadRequest("Ugyldig vægt.");
+        }
+
         // Initialize BMI and status variables
         double bmi;
         string status;
@@ -18,7 +29,7 @@ public class CalculatorController : ControllerBase
         try
         {
             // Perform BMI calculation
-            bmi = CalculateBmi(weight, height);
+            bmi = CalculateBmi(parsedWeight, parsedHeight);
             status = BmiStatus(bmi);
         }
         catch(Exception e)

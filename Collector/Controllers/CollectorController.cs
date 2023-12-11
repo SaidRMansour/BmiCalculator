@@ -30,12 +30,12 @@ public class CollectorController : ControllerBase
         {
             return BadRequest("Ugyldig vægt.");
         }
-
+        Console.WriteLine("Input valid");
         try
         {
             // Create HTTP client instance
             var client = _clientFactory.CreateClient("MyClient");
-            var request = new HttpRequestMessage(HttpMethod.Get, $"url"); // TODO
+            var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:8000/Calculator?height={parsedHeight}&weight={parsedWeight}");
 
             var retryPolicy = Policy
                .HandleResult<HttpResponseMessage>(r => !r.IsSuccessStatusCode)
@@ -47,8 +47,6 @@ public class CollectorController : ControllerBase
                });
 
             HttpResponseMessage response = await retryPolicy.ExecuteAsync(() => client.SendAsync(request));
-
-            //var response = await client.SendAsync(request);
 
             // Check if the response is successful
             if (!response.IsSuccessStatusCode)
@@ -66,7 +64,7 @@ public class CollectorController : ControllerBase
         catch (Exception e)
         {
             // TODO -> Log message
-            return StatusCode(500, $"Internal server error: {e.Message}");
+            return StatusCode(500, $"En intern serverfejl opstod: {e.Message}");
         }
 
     }
