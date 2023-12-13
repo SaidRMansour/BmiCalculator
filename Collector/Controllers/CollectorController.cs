@@ -35,7 +35,7 @@ public class CollectorController : ControllerBase
         {
             // Create HTTP client instance
             var client = _clientFactory.CreateClient("MyClient");
-            var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:8000/Calculator?height={parsedHeight}&weight={parsedWeight}");
+            var request = new HttpRequestMessage(HttpMethod.Get, $"http://calculator-service/Calculator?height={parsedHeight}&weight={parsedWeight}");
 
             var retryPolicy = Policy
                .HandleResult<HttpResponseMessage>(r => !r.IsSuccessStatusCode)

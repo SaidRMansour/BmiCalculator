@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedModels", "SharedModels\SharedModels.csproj", "{D671FCD4-32F0-4B70-A668-58BE4F0E01BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInterface", "UserInterface\UserInterface.csproj", "{7F374CB4-111F-4D60-9B82-37A80915B538}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D671FCD4-32F0-4B70-A668-58BE4F0E01BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D671FCD4-32F0-4B70-A668-58BE4F0E01BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D671FCD4-32F0-4B70-A668-58BE4F0E01BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F374CB4-111F-4D60-9B82-37A80915B538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F374CB4-111F-4D60-9B82-37A80915B538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F374CB4-111F-4D60-9B82-37A80915B538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F374CB4-111F-4D60-9B82-37A80915B538}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Start Page";
+}
+
+
+@section Scripts {
+    @if (ViewBag.Alert != null)
+    {
+        <script type="text/javascript">
+            window.onload = function() {
+                alert("@ViewBag.Alert");
+            };
+        </script>
+    }
+}
+
+<div class="text-center">
+    <h1 class="display-4">Velkommen til BMI calculator</h1>
+    <form asp-action="CalculateBMI" asp-controller="Home" method="post">
+        <div class="form-group">
+            <label for="height">Højde (meter):</label>
+            <input type="number" class="form-control" id="height" name="height" min="1" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="weight">Vægt (kg):</label>
+            <input type="number" class="form-control" id="weight" name="weight" min="1" step="0.01" required>
+        </div>
+        <br />
+        <br />
+        <button type="submit" class="btn btn-primary" style="width:100%">Beregn BMI</button>
+    </form>
+    <br />
+    <br />
+
+    @if (ViewBag.BMI != null)
+    {
+        <div>
+            <h3>Din BMI: @ViewBag.BMI</h3>
+            <h3>Status: @ViewBag.Status</h3>
+            <form asp-action="Index" asp-controller="Home">
+                <button type="submit" class="btn btn-warning">Reset</button>
+            </form>
+        </div>
+    }
+</div>

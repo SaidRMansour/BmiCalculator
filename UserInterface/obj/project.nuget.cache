@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "WT3d42HhrkKpcfyK0GRWYB7W+Nfux83g2xovq7V7IBrCAkrojmBhOBH28XLuf8ZsQWOVF3zYeFYNuW4fCe2vNw==",
+  "success": true,
+  "projectFilePath": "/Users/saidr/Projects/BMICalculator/UserInterface/UserInterface.csproj",
+  "expectedPackageFiles": [
+    "/Users/saidr/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "/Users/saidr/.nuget/packages/microsoft.bcl.timeprovider/8.0.0/microsoft.bcl.timeprovider.8.0.0.nupkg.sha512",
+    "/Users/saidr/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "/Users/saidr/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "/Users/saidr/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/Users/saidr/.nuget/packages/microsoft.extensions.http/8.0.0/microsoft.extensions.http.8.0.0.nupkg.sha512",
+    "/Users/saidr/.nuget/packages/microsoft.extensions.http.polly/8.0.0/microsoft.extensions.http.polly.8.0.0.nupkg.sha512",
+    "/Users/saidr/.nuget/packages/microsoft.extensions.logging/8.0.0/microsoft.extensions.logging.8.0.0.nupkg.sha512",
+    "/Users/saidr/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "/Users/saidr/.nuget/packages/microsoft.extensions.options/8.0.0/microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "/Users/saidr/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/Users/saidr/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/saidr/.nuget/packages/polly/8.2.0/polly.8.2.0.nupkg.sha512",
+    "/Users/saidr/.nuget/packages/polly.core/8.2.0/polly.core.8.2.0.nupkg.sha512",
+    "/Users/saidr/.nuget/packages/polly.extensions.http/3.0.0/polly.extensions.http.3.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

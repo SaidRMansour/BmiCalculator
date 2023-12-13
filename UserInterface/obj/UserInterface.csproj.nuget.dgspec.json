@@ -1,0 +1,137 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/saidr/Projects/BMICalculator/UserInterface/UserInterface.csproj": {}
+  },
+  "projects": {
+    "/Users/saidr/Projects/BMICalculator/SharedModels/SharedModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/saidr/Projects/BMICalculator/SharedModels/SharedModels.csproj",
+        "projectName": "SharedModels",
+        "projectPath": "/Users/saidr/Projects/BMICalculator/SharedModels/SharedModels.csproj",
+        "packagesPath": "/Users/saidr/.nuget/packages/",
+        "outputPath": "/Users/saidr/Projects/BMICalculator/SharedModels/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/saidr/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/saidr/Projects/BMICalculator/UserInterface/UserInterface.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/saidr/Projects/BMICalculator/UserInterface/UserInterface.csproj",
+        "projectName": "UserInterface",
+        "projectPath": "/Users/saidr/Projects/BMICalculator/UserInterface/UserInterface.csproj",
+        "packagesPath": "/Users/saidr/.nuget/packages/",
+        "outputPath": "/Users/saidr/Projects/BMICalculator/UserInterface/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/saidr/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/saidr/Projects/BMICalculator/SharedModels/SharedModels.csproj": {
+                "projectPath": "/Users/saidr/Projects/BMICalculator/SharedModels/SharedModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.Extensions.Http.Polly": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Polly": {
+              "target": "Package",
+              "version": "[8.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,18 @@
 version: '3.4'
 
 services:
+  ui-service:
+    build:
+        context: .
+        dockerfile: UserInterface/Dockerfile
+    depends_on:
+        - collector-service
+        - calculator-service
+    ports:
+        - "8000:80"
+    restart:
+        on-failure
+        
   collector-service:
     build:
       context: .
@@ -16,8 +28,6 @@ services:
       dockerfile: Calculator/Dockerfile
     deploy:
       replicas: 2
-    ports:
-       - "8000:80"
     restart:
       on-failure
 
