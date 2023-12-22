@@ -1,0 +1,12 @@
+/Users/saidr/Projects/BMICalculator/Monitoring/bin/Debug/net7.0/Monitoring.deps.json
+/Users/saidr/Projects/BMICalculator/Monitoring/bin/Debug/net7.0/Monitoring.dll
+/Users/saidr/Projects/BMICalculator/Monitoring/bin/Debug/net7.0/Monitoring.pdb
+/Users/saidr/Projects/BMICalculator/Monitoring/obj/Debug/net7.0/Monitoring.csproj.AssemblyReference.cache
+/Users/saidr/Projects/BMICalculator/Monitoring/obj/Debug/net7.0/Monitoring.GeneratedMSBuildEditorConfig.editorconfig
+/Users/saidr/Projects/BMICalculator/Monitoring/obj/Debug/net7.0/Monitoring.AssemblyInfoInputs.cache
+/Users/saidr/Projects/BMICalculator/Monitoring/obj/Debug/net7.0/Monitoring.AssemblyInfo.cs
+/Users/saidr/Projects/BMICalculator/Monitoring/obj/Debug/net7.0/Monitoring.csproj.CoreCompileInputs.cache
+/Users/saidr/Projects/BMICalculator/Monitoring/obj/Debug/net7.0/Monitoring.dll
+/Users/saidr/Projects/BMICalculator/Monitoring/obj/Debug/net7.0/refint/Monitoring.dll
+/Users/saidr/Projects/BMICalculator/Monitoring/obj/Debug/net7.0/Monitoring.pdb
+/Users/saidr/Projects/BMICalculator/Monitoring/obj/Debug/net7.0/ref/Monitoring.dll

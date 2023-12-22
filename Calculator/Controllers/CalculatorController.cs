@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Monitoring;
 using SharedModels;
 
 namespace Calculator.Controllers;
@@ -14,11 +15,13 @@ public class CalculatorController : ControllerBase
         // Validate height input
         if (!double.TryParse(height, out double parsedHeight) || parsedHeight <= 0)
         {
+            MonitorService.Log.Here().Error("Ugyldig højde input: {height}", height);
             return BadRequest("Ugyldig højde.");
         }
         // Validate weight input
         if (!double.TryParse(weight, out double parsedWeight) || parsedWeight <= 0)
         {
+            MonitorService.Log.Here().Error("Ugyldig vægt input: {weight}", weight);
             return BadRequest("Ugyldig vægt.");
         }
 
@@ -31,10 +34,14 @@ public class CalculatorController : ControllerBase
             // Perform BMI calculation
             bmi = CalculateBmi(parsedWeight, parsedHeight);
             status = BmiStatus(bmi);
+
+            MonitorService.Log.Here().Debug("BMI beregnet: {bmi}, Status: {status}", bmi, status);
+
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             // Handle any exceptions that occur during the calculation process
+            MonitorService.Log.Here().Error("Beregning fejlede: {Message}", e.Message);
             return StatusCode(500, $"En intern serverfejl opstod: {e.Message}");
         }
 
@@ -45,6 +52,8 @@ public class CalculatorController : ControllerBase
             Bmi = bmi,
             Status = status
         };
+
+        MonitorService.Log.Here().Debug("BMI objekt oprettet: {bmiObject}", bmiObject);
 
         return Ok(bmiObject);
     }
@@ -57,6 +66,8 @@ public class CalculatorController : ControllerBase
 
     private string BmiStatus(double bmi)
     {
+        MonitorService.Log.Here().Debug("Bestemmer BMI status for værdi: {bmi}", bmi);
+
         // Switch statement to determine the BMI category based on BMI value
         switch (bmi)
         {

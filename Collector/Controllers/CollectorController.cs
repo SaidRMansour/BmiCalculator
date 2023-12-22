@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Monitoring;
 using Newtonsoft.Json;
 using Polly;
 using SharedModels;
@@ -23,19 +24,25 @@ public class CollectorController : ControllerBase
         // Validate height input
         if (!double.TryParse(height, out double parsedHeight) || parsedHeight <= 0)
         {
+            MonitorService.Log.Here().Error("Ugyldig højde input: {height}", height);
             return BadRequest("Ugyldig højde.");
         }
         // Validate weight input
         if (!double.TryParse(weight, out double parsedWeight) || parsedWeight <= 0)
         {
+            MonitorService.Log.Here().Error("Ugyldig vægt input: {weight}", weight);
             return BadRequest("Ugyldig vægt.");
         }
-        Console.WriteLine("Input valid");
+
+        MonitorService.Log.Here().Debug("Input valideret: Højde og vægt");
+
         try
         {
             // Create HTTP client instance
             var client = _clientFactory.CreateClient("MyClient");
             var request = new HttpRequestMessage(HttpMethod.Get, $"http://calculator-service/Calculator?height={parsedHeight}&weight={parsedWeight}");
+            MonitorService.Log.Here().Debug("Opretter HTTP-anmodning: {Uri}", request.RequestUri);
+
 
             var retryPolicy = Policy
                .HandleResult<HttpResponseMessage>(r => !r.IsSuccessStatusCode)
@@ -51,19 +58,23 @@ public class CollectorController : ControllerBase
             // Check if the response is successful
             if (!response.IsSuccessStatusCode)
             {
+                MonitorService.Log.Here().Error("Fejl ved hentning af data: {ReasonPhrase}, Statuskode: {StatusCode}", response.ReasonPhrase, response.StatusCode);
                 return StatusCode((int)response.StatusCode, $"Fejl ved hentning af data: {response.ReasonPhrase}");
             }
+
+            MonitorService.Log.Here().Debug("Succesfuld respons modtaget: Statuskode {StatusCode}", response.StatusCode);
 
             // Deserialize the successful response
             var result = await response.Content.ReadAsStringAsync();
             var bmiObject = JsonConvert.DeserializeObject<BMI>(result);
+            MonitorService.Log.Here().Debug("BMI objekt deserialiseret: {bmiObject}", bmiObject);
 
             // Return the deserialized BMI object
             return Ok(bmiObject);
         }
         catch (Exception e)
         {
-            // TODO -> Log message
+            MonitorService.Log.Here().Error("Fejl under behandling: {Message}", e.Message);
             return StatusCode(500, $"En intern serverfejl opstod: {e.Message}");
         }
 
